@@ -18,7 +18,7 @@ DigiAra_Model_and_Demo_Data/
 │   ├── Bagging_Base.joblib
 │   ├── Demo_Unperturb_Transcriptomes.tsv
 │   ├── ExtraTrees_Large.joblib
-│   ├── LGBM_Fast.joblib
+│   ├── LGBM.joblib
 │   ├── Pst_DC3000_esmft32.mean_expand_27448.npy
 │   ├── Allzero_27448M5120.npy
 │   ├── Random_forest.joblib
@@ -92,8 +92,8 @@ Prediction_results/
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_Bagging_Base.npy
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_ExtraTrees_Large.csv
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_ExtraTrees_Large.npy
-│   ├── DigiAra_<mode>_<mutant>_<microbe>_LGBM_Fast.csv
-│   ├── DigiAra_<mode>_<mutant>_<microbe>_LGBM_Fast.npy
+│   ├── DigiAra_<mode>_<mutant>_<microbe>_LGBM.csv
+│   ├── DigiAra_<mode>_<mutant>_<microbe>_LGBM.npy
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_Random_forest.csv
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_Random_forest.npy
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_XGB.csv
