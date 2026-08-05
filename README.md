@@ -1,4 +1,4 @@
-# DigiAra Inference
+# DigiAra
 
 DigiAra predicts Arabidopsis transcriptional responses under a configured gene
 perturbation and microbial condition. The package includes five machine-learning
