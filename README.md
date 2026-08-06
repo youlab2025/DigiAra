@@ -48,7 +48,7 @@ MICROBE = "PstDC3000"
 ```
 
 - `PERTURBATION_TYPE` accepts `"KO"` or `"OE"`.
-- `MUTANT_GENES` accepts one or multiple Arabidopsis locus IDs.
+- `MUTANT_GENES` accepts one or multiple Arabidopsis locus IDs. More mutant_genes can be found at Model_and_data/Ara_stand_protein_sorted_gl_entry.csv
 - `MUTANT_NAME` is the label used in output filenames. If it is empty, the locus
   IDs are used automatically.
 - `MICROBE` accepts `"PstDC3000"` or `"mock"`.
