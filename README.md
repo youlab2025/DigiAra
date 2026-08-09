@@ -1,4 +1,4 @@
-# DigiAra
+# DigiAra Inference
 
 DigiAra predicts Arabidopsis transcriptional responses under a configured gene
 perturbation and microbial condition. The package includes five machine-learning
@@ -12,18 +12,10 @@ need to be entered manually.
 
 ```text
 DigiAra_Model_and_Demo_Data/
+├── download.py
 ├── Model_and_data/
-│   ├── Ara_stand_protein__esmft32_embeddings1.npy
-│   ├── Ara_stand_protein_sorted_gl_entry.csv
-│   ├── Bagging_Base.joblib
-│   ├── Demo_Unperturb_Transcriptomes.tsv
-│   ├── ExtraTrees_Large.joblib
-│   ├── LGBM.joblib
-│   ├── Pst_DC3000_esmft32.mean_expand_27448.npy
-│   ├── Allzero_27448M5120.npy
-│   ├── Random_forest.joblib
-│   ├── Transformer.pt
-│   └── XGB.joblib
+│   ├── README.md
+│   └── .gitignore
 ├── scripts/
 │   ├── 00_Prepare_Config.py
 │   ├── 01_ML_inference.py
@@ -35,6 +27,28 @@ DigiAra_Model_and_Demo_Data/
 
 The `Prediction_results/` directory is created automatically when inference is
 run.
+
+## Download model and demo data
+
+The model parameters and demonstration data are hosted in the versioned Zenodo
+record [10.5281/zenodo.21824787](https://doi.org/10.5281/zenodo.21824787). They
+are not stored in this GitHub repository because the complete download is
+approximately 33.5 GB.
+
+From the root of the cloned repository, run:
+
+```bash
+python download.py
+```
+
+The script downloads all 11 required files into `Model_and_data/`, resumes
+interrupted `.part` downloads when supported by the server, and verifies each
+file against its Zenodo MD5 checksum. It uses only the Python standard library.
+Allow at least 40 GB of free disk space before starting. More details are
+available in `Model_and_data/README.md`.
+
+The Zenodo files must be public for anonymous downloading. While the record is
+restricted, `download.py` will report an access error.
 
 ## Configuration
 
@@ -48,7 +62,7 @@ MICROBE = "PstDC3000"
 ```
 
 - `PERTURBATION_TYPE` accepts `"KO"` or `"OE"`.
-- `MUTANT_GENES` accepts one or multiple Arabidopsis locus IDs. More mutant_genes can be found at `Model_and_data/Ara_stand_protein_sorted_gl_entry.csv`.
+- `MUTANT_GENES` accepts one or multiple Arabidopsis locus IDs.
 - `MUTANT_NAME` is the label used in output filenames. If it is empty, the locus
   IDs are used automatically.
 - `MICROBE` accepts `"PstDC3000"` or `"mock"`.
@@ -59,13 +73,15 @@ with `+log1p(1e6)`. The unperturbed state is read from
 
 ## Running inference
 
-Submit the scripts in numerical order:
+Run the scripts in numerical order:
 
-1. `scripts/01_ML_inference.py`
-2. `scripts/02_Trans_inference.py`
-3. `scripts/03_Ensemble.py`
+```bash
+python scripts/01_ML_inference.py
+python scripts/02_Trans_inference.py
+python scripts/03_Ensemble.py
+```
 
-Submit `03_Ensemble.py` only after both `01_ML_inference.py` and
+Run `03_Ensemble.py` only after both `01_ML_inference.py` and
 `02_Trans_inference.py` have completed successfully.
 
 1. `01_ML_inference.py` runs Bagging, Extra Trees, LightGBM, Random Forest, and
@@ -92,8 +108,8 @@ Prediction_results/
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_Bagging_Base.npy
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_ExtraTrees_Large.csv
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_ExtraTrees_Large.npy
-│   ├── DigiAra_<mode>_<mutant>_<microbe>_LGBM.csv
-│   ├── DigiAra_<mode>_<mutant>_<microbe>_LGBM.npy
+│   ├── DigiAra_<mode>_<mutant>_<microbe>_LGBM_Fast.csv
+│   ├── DigiAra_<mode>_<mutant>_<microbe>_LGBM_Fast.npy
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_Random_forest.csv
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_Random_forest.npy
 │   ├── DigiAra_<mode>_<mutant>_<microbe>_XGB.csv
@@ -141,3 +157,11 @@ The inference scripts use the following Python packages:
 
 The supplied joblib and PyTorch files should be treated as trusted model files
 and loaded only from the distributed DigiAra package.
+
+## Citation and data availability
+
+If you use DigiAra, cite both the associated preprint and the version-specific
+Zenodo record containing the model parameters and demonstration data:
+
+- Preprint: <https://doi.org/10.64898/2026.08.07.743468>
+- Model and demo data: <https://doi.org/10.5281/zenodo.21824787>
