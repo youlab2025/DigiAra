@@ -162,7 +162,7 @@ and loaded only from the distributed DigiAra package.
 ## Citation
 If you use this code, please cite our paper.
 ```
-@article {Bai2026.08.07.743468,
+@article{Bai2026.08.07.743468,
 	author = {Bai, Tonghao and Cui, Shuguang and You, Yuning},
 	title = {DigiAra Computationally Designs Plant Mutants for Resistance to Microbial Infection in Arabidopsis},
 	elocation-id = {2026.08.07.743468},
