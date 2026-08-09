@@ -4,6 +4,7 @@ DigiAra predicts Arabidopsis transcriptional responses under a configured gene
 perturbation and microbial condition. The package includes five machine-learning
 models, one Transformer model, a six-model Hybrid prediction, and demonstration
 data.
+[[paper]](https://www.biorxiv.org/content/10.64898/2026.08.07.743468)
 
 ## Project layout
 
@@ -158,10 +159,18 @@ The inference scripts use the following Python packages:
 The supplied joblib and PyTorch files should be treated as trusted model files
 and loaded only from the distributed DigiAra package.
 
-## Citation and data availability
-
-If you use DigiAra, cite both the associated preprint and the version-specific
-Zenodo record containing the model parameters and demonstration data:
-
-- Preprint: <https://doi.org/10.64898/2026.08.07.743468>
-- Model and demo data: <https://doi.org/10.5281/zenodo.21824787>
+## Citation
+If you use this code, please cite our paper.
+```
+@article {Bai2026.08.07.743468,
+	author = {Bai, Tonghao and Cui, Shuguang and You, Yuning},
+	title = {DigiAra Computationally Designs Plant Mutants for Resistance to Microbial Infection in Arabidopsis},
+	elocation-id = {2026.08.07.743468},
+	year = {2026},
+	doi = {10.64898/2026.08.07.743468},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2026/08/07/2026.08.07.743468},
+	eprint = {https://www.biorxiv.org/content/early/2026/08/07/2026.08.07.743468.full.pdf},
+	journal = {bioRxiv}
+}
+```
