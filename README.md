@@ -162,15 +162,12 @@ and loaded only from the distributed DigiAra package.
 ## Citation
 If you use this code, please cite our paper.
 ```
-@article{Bai2026.08.07.743468,
-	author = {Bai, Tonghao and Cui, Shuguang and You, Yuning},
-	title = {DigiAra Computationally Designs Plant Mutants for Resistance to Microbial Infection in Arabidopsis},
-	elocation-id = {2026.08.07.743468},
-	year = {2026},
-	doi = {10.64898/2026.08.07.743468},
-	publisher = {Cold Spring Harbor Laboratory},
-	URL = {https://www.biorxiv.org/content/early/2026/08/07/2026.08.07.743468},
-	eprint = {https://www.biorxiv.org/content/early/2026/08/07/2026.08.07.743468.full.pdf},
-	journal = {bioRxiv}
+@article{bai2026digiara,
+  title={DigiAra Computationally Designs Plant Mutants for Resistance to Microbial Infection in Arabidopsis},
+  author={Bai, Tonghao and Cui, Shuguang and You, Yuning},
+  journal={bioRxiv},
+  pages={2026--08},
+  year={2026},
+  publisher={Cold Spring Harbor Laboratory}
 }
 ```
